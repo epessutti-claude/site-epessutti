@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Epessutti · Livros</title>
+<meta name="description" content="Livros do Epessutti: O Verão Brasileiro do Pippin, livro de colorir infantil com o pinguim Pippin e o mico Caju pelo Nordeste, e Enigmas dos Anos 90, livro de jogos de lógica para quem viveu os anos 90.">
+<meta property="og:title" content="Epessutti · Livros de colorir e de enigmas">
+<meta property="og:description" content="Conheça o Pippin e o Caju no Nordeste e acompanhe o lançamento de Enigmas dos Anos 90.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="img/og.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@400;600;800&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: alegre e caloroso para o Pippin; nostálgico e esperto para os Enigmas
+   IDEA: a vitrine de uma livraria de bairro num dia de verão no Nordeste
+   PICTURE: cena ilustrada com Pippin de cachecol verde-amarelo e Caju sob o coqueiro
+   COLOUR+TYPE: céu turquesa, areia, sol amarelo, acento coral; Baloo 2 + Nunito; Enigmas em azul-marinho/vermelho/bege com Poppins
+   LAYOUT: menu, cena em faixa cheia, livro do Pippin com 4 formas de comprar, faixa marinho dos Enigmas, autor, rodapé */
+:root{color-scheme:light;--sky:#3cc4d6;--sky2:#a9ecf2;--sand:#ffe2a8;--sun:#ffc93c;--coral:#f0604d;--leaf:#1f9d55;--ink:#1f2a37;--soft:#55606e;--paper:#fffaf0;--card:#ffffff;
+--navy:#1D2A3A;--red:#C0392B;--beige:#F4EFE6;--yel:#FFE08A;--gray:#8A8F98}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.6 Nunito,system-ui,sans-serif;overflow-x:clip}
+a{color:inherit}
+h1,h2,h3{font-family:"Baloo 2",Nunito,sans-serif;line-height:1.05;text-wrap:balance;margin:0 0 .4em}
+h1{font-size:clamp(36px,6vw,60px);font-weight:800}
+h2{font-size:clamp(30px,4.2vw,46px);font-weight:800}
+h3{font-size:22px;font-weight:800}
+p{margin:0 0 1em;max-width:62ch}
+.wrap{max-width:1240px;margin:0 auto}
+.band{padding:clamp(40px,6vw,88px) max(5vw,16px)}
+/* menu */
+header{position:sticky;top:0;z-index:10;background:rgba(255,250,240,.94);backdrop-filter:blur(8px);border-bottom:1px solid #f0e2c4}
+nav{max-width:1240px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:6px 22px;padding:12px max(5vw,16px)}
+.logo{font:800 26px "Baloo 2",sans-serif;text-decoration:none;margin-right:auto;display:flex;align-items:center;gap:8px}
+.logo img{width:40px;height:40px;border-radius:50%;object-fit:cover;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.15)}
+nav a.l{text-decoration:none;font-weight:700;padding:10px 2px;min-height:44px;display:inline-flex;align-items:center}
+nav a.l:hover{color:var(--coral)}
+nav a:focus-visible,.btn:focus-visible,.buy a:focus-visible{outline:3px solid var(--coral);outline-offset:3px;border-radius:8px}
+/* hero */
+.hero{position:relative;background:linear-gradient(180deg,var(--sky) 0%,var(--sky2) 70%,var(--sand) 100%);overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:24px;align-items:center;padding:clamp(28px,5vw,64px) max(5vw,16px) 0}
+.hero-txt{padding-bottom:clamp(40px,7vw,96px)}
+.hero h1{color:#fff;text-shadow:0 3px 0 rgba(0,0,0,.12)}
+.hero .lead{font-size:19px;color:#0f3a42;font-weight:600}
+.scene{margin:0 0 clamp(28px,4vw,56px);justify-self:center;width:min(100%,520px);border-radius:28px;overflow:hidden;border:8px solid #fff;box-shadow:0 24px 50px rgba(15,58,66,.28);transform:rotate(2deg)}
+.scene img{display:block;width:100%;height:auto}
+.btn{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:10px 22px;border-radius:999px;font-weight:800;text-decoration:none;background:var(--coral);color:#fff;box-shadow:0 4px 0 #b8402f;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:#fff;color:var(--ink);box-shadow:0 4px 0 #d9c9a3}
+.row{display:flex;flex-wrap:wrap;gap:14px;margin-top:22px}
+/* pippin */
+.book{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(28px,5vw,72px);align-items:start}
+.cover{border-radius:14px;box-shadow:0 18px 40px rgba(31,42,55,.22),0 2px 0 rgba(0,0,0,.05);overflow:hidden;background:#fff;aspect-ratio:1/1}
+.cover img{width:100%;height:100%;display:block;object-fit:cover}
+.tag{display:inline-block;font-weight:800;font-size:14px;padding:4px 12px;border-radius:999px;background:#d9f5f8;color:#0d6370;margin-bottom:12px}
+.facts{display:flex;flex-wrap:wrap;gap:10px;margin:6px 0 22px;padding:0;list-style:none}
+.facts li{background:#fff;border:2px solid #f0e2c4;border-radius:12px;padding:6px 12px;font-weight:700;font-size:15px;white-space:nowrap}
+.inside{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:8px 0 0;padding:0;list-style:none}
+.inside li{background:var(--sand);border-radius:14px;padding:14px 16px;font-weight:700}
+.inside b{display:block;font:800 19px "Baloo 2",sans-serif;color:#9a5a00}
+.buy-wrap{background:#fff3d9}
+.peek{background:#fff}.peek-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:center}
+.page{margin:0;background:#fff;padding:14px;border-radius:6px;box-shadow:0 18px 40px rgba(31,42,55,.18);transform:rotate(-1.5deg);max-width:520px;justify-self:center}.page img{display:block;width:100%;height:auto}
+.buy{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:22px}
+.buy article{background:var(--card);border-radius:18px;padding:22px;display:flex;flex-direction:column;border:2px solid #f0e2c4}
+.buy .kind{font-weight:800;color:var(--coral);font-size:15px}
+.buy p{font-size:16px;color:var(--soft);flex:1}
+.buy .price{font:800 24px "Baloo 2",sans-serif;color:var(--ink);margin-bottom:12px;white-space:nowrap}
+.buy a{display:flex;text-align:center;padding:8px 12px;justify-content:center;align-items:center;min-height:48px;border-radius:12px;background:var(--ink);color:#fff;text-decoration:none;font-weight:800}
+.buy a:hover{background:var(--coral)}
+.buy .price.muted{font:700 16px Nunito,sans-serif;color:var(--soft);padding-top:8px}
+.small{font-size:14px;color:var(--soft)}
+/* enigmas */
+.enig{background:var(--navy);color:var(--beige);font-family:Poppins,sans-serif}
+.enig h2,.enig h3{font-family:Poppins,sans-serif;font-weight:700}
+.enig h2{color:#fff}
+.enig p{color:#d6dbe3;font-family:Nunito,sans-serif}
+.enig .book{align-items:center}
+.enig .tag{background:var(--red);color:#fff}
+.games{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin-top:26px}
+.game{background:var(--beige);color:var(--navy);border-radius:10px;padding:16px;border-left:6px solid var(--red)}
+.game h3{font-size:17px;margin:0 0 4px}
+.game p{color:#4a5260;font-size:15px;margin:0}
+.enig .btn{background:var(--yel);color:var(--navy);box-shadow:0 4px 0 #c9a94b}
+.vhs{aspect-ratio:848/1264;border-radius:8px;box-shadow:0 18px 40px rgba(0,0,0,.4)}
+/* autor */
+.author{display:grid;grid-template-columns:auto minmax(0,1fr);gap:28px;align-items:center}
+.avatar{width:120px;height:120px;border-radius:50%;background:var(--sky);display:grid;place-items:center}
+.avatar{overflow:hidden;border:4px solid #fff;box-shadow:0 6px 16px rgba(0,0,0,.15)}.avatar img{width:100%;height:100%;object-fit:cover}
+.contato{background:#d9f5f8}.contato .tag{background:#fff}.contato-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(28px,5vw,72px);align-items:start}
+.form{background:#fff;border-radius:18px;padding:clamp(18px,3vw,28px);display:grid;gap:6px;box-shadow:0 12px 30px rgba(15,58,66,.12)}
+.form label{font-weight:800;font-size:15px;margin-top:8px}
+.form input,.form select,.form textarea{font:16px Nunito,sans-serif;padding:12px 14px;border:2px solid #cfe3e6;border-radius:12px;min-height:48px;background:#fff;color:var(--ink);width:100%}
+.form input:focus,.form select:focus,.form textarea:focus{outline:none;border-color:var(--sky)}
+.form .btn{margin-top:14px;justify-self:start;border:0;cursor:pointer;font-family:inherit;font-size:16px}
+.hp{position:absolute;left:-9999px}.form-status{margin:6px 0 0;font-weight:700;min-height:1.4em}
+footer{background:var(--ink);color:#e6e9ee;padding:36px max(5vw,16px);font-size:15px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 32px;justify-content:space-between;align-items:center}
+footer a{color:#fff;font-weight:700}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.bob{animation:bob 3.2s ease-in-out infinite;transform-box:fill-box}
+@media (prefers-reduced-motion:reduce){.page{transform:none}.scene{transform:none}.bob{animation:none}html{scroll-behavior:auto}}
+@media(max-width:860px){.contato-grid{grid-template-columns:minmax(0,1fr)}.peek-grid{grid-template-columns:minmax(0,1fr)}.hero .wrap,.book{grid-template-columns:minmax(0,1fr)}.hero-txt{padding-bottom:0}.cover{max-width:420px}.enig .vhs{max-width:340px}}
+@media(max-width:600px){nav{gap:0 14px}.logo{width:100%;margin:0}nav a.l{min-height:40px}nav a.l{font-size:15px}.author{grid-template-columns:minmax(0,1fr)}.facts li{white-space:normal}}
+</style>
+</head>
+<body>
+
+ 
+<header>
+  <nav aria-label="Principal">
+    <a class="logo" href="#inicio"><img src="img/epessutti-avatar.jpg" alt="" width="40" height="40">Epessutti</a>
+    <a class="l" href="#pippin">Pippin</a>
+    <a class="l" href="#por-dentro">Por dentro</a>
+    <a class="l" href="#comprar">Onde comprar</a>
+    <a class="l" href="#enigmas">Enigmas</a>
+    <a class="l" href="#autor">Autor</a>
+    <a class="l" href="#contato">Contato</a>
+  </nav>
+</header>
+
+<main id="inicio">
+  <section class="hero" aria-label="Apresentação">
+    <div class="wrap">
+      <div class="hero-txt">
+        <h1>Livros para colorir, pensar e se divertir</h1>
+        <p class="lead">Viaje pelo Nordeste com o pinguim Pippin e o mico Caju, e prepare a cabeça para os Enigmas dos Anos 90, que estão chegando.</p>
+        <div class="row">
+          <a class="btn" href="#comprar">Comprar o livro do Pippin</a>
+          <a class="btn ghost" href="#enigmas">Conhecer os Enigmas</a>
+        </div>
+      </div>
+      <figure class="scene"><img src="img/pippin-caju.jpg" alt="Pippin, o pinguim de cachecol verde e amarelo, e Caju, o mico-leão-dourado, numa rua colorida do Pelourinho" width="1024" height="1024"></figure>
+    </div>
+  </section>
+
+  <section class="band" id="pippin">
+    <div class="wrap book">
+      <div class="cover"><img src="img/capa-pippin.jpg" alt="Capa do livro O Verão Brasileiro do Pippin, Vol. 1 Nordeste" width="900" height="900"></div>
+      <div>
+        <span class="tag">Livro de colorir · 3 a 8 anos</span>
+        <h2>O Verão Brasileiro do Pippin</h2>
+        <p>Pippin é um pinguim que chega ao Brasil meio perdido e vai se apaixonando por tudo o que encontra. Ao lado do amigo Caju, um mico-leão-dourado, ele atravessa o Nordeste: dança frevo, prova acarajé, joga capoeira, vê tartaruguinhas nascendo e explora cidades históricas.</p>
+        <ul class="facts">
+          <li>40 desenhos</li><li>Traços grossos e fáceis</li><li>Páginas impressas de um lado só</li><li>Vol. 1 da série</li>
+        </ul>
+        <h3>O que a criança vai colorir</h3>
+        <ul class="inside">
+          <li><b>Frevo</b>sombrinha colorida e muito passo</li>
+          <li><b>Acarajé</b>o sabor da Bahia</li>
+          <li><b>Capoeira</b>ginga, roda e berimbau</li>
+          <li><b>Tartaruguinhas</b>nascendo na areia</li>
+          <li><b>Cidades históricas</b>casarões e ladeiras</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="band peek" id="por-dentro">
+    <div class="wrap peek-grid">
+      <div>
+        <span class="tag">Veja por dentro</span>
+        <h2>Uma página de verdade do livro</h2>
+        <p>Assim são os 40 desenhos: traços grossos, figuras grandes e espaço de sobra para a criança pintar sem frustração. Aqui, Pippin e Caju caem no frevo com sombrinhas, confete e muita gente dançando.</p>
+        <p>Cada desenho fica sozinho na página, com o verso em branco, então dá para usar canetinha sem a tinta passar para o próximo.</p>
+        <a class="btn" href="#comprar">Escolher minha edição</a>
+      </div>
+      <figure class="page"><img src="img/pagina-frevo.jpg" alt="Página de colorir do livro: Pippin e Caju dançando frevo com crianças, sombrinhas e confete" width="900" height="900" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <section class="band buy-wrap" id="comprar">
+    <div class="wrap">
+      <h2>Escolha a sua edição</h2>
+      <p>O mesmo Pippin em quatro versões: para presentear, para levar na bolsa, para quem mora fora ou para imprimir em casa quantas vezes quiser.</p>
+      <div class="buy">
+        <article>
+          <span class="kind">Edição especial</span>
+          <h3>Clube de Autores</h3>
+          <p>Formato quadrado 20 × 20 cm, 86 páginas, papel offset 90 g. A melhor para presente.</p>
+          <div class="price">R$ 54,28</div>
+          <a href="https://clubedeautores.com.br/livro/o-verao-brasileiro-do-pippin" target="_blank" rel="noopener">Comprar no Clube</a>
+        </article>
+        <article>
+          <span class="kind">Edição compacta</span>
+          <h3>UICLAP</h3>
+          <p>Formato 16 × 23 cm, mais leve e prático para levar em viagens e passeios.</p>
+          <div class="price">R$ 38,00</div>
+          <a href="https://loja.uiclap.com/titulo/ua224232/" target="_blank" rel="noopener">Comprar na UICLAP</a>
+        </article>
+        <article>
+          <span class="kind">International edition</span>
+          <h3>Amazon</h3>
+          <p>Versão em inglês, impressa e enviada pela Amazon. Ótima para presentear amigos e família no exterior.</p>
+          <div class="price">US$ 9,99</div>
+          <a href="https://www.amazon.com/dp/B0HRWT2BFD" target="_blank" rel="noopener">Comprar na Amazon</a>
+        </article>
+        <article>
+          <span class="kind">Versão digital</span>
+          <h3>PDF para imprimir</h3>
+          <p>Arquivo em A4 para imprimir em casa. Acabou o desenho preferido? É só imprimir de novo.</p>
+          <div class="price">R$ 14,99</div>
+          <a href="https://go.hotmart.com/X108525661M?dp=1" target="_blank" rel="noopener">Comprar na Hotmart</a>
+        </article>
+      </div>
+      <p class="small" style="margin-top:18px">Preços de referência; o frete e o valor final são calculados por cada loja. A edição da Amazon é cobrada em dólar.</p>
+    </div>
+  </section>
+
+  <section class="band enig" id="enigmas">
+    <div class="wrap book">
+      <div class="cover vhs"><img src="img/capa-enigmas.jpg" alt="Capa do livro Enigmas dos Anos 90: 18 desafios de lógica e palavras para quem viveu a década" width="848" height="1264"></div>
+      <div>
+        <span class="tag">Em produção · para quem viveu os anos 90</span>
+        <h2>Enigmas dos Anos 90</h2>
+        <p>São 18 desafios de lógica e palavras para quem cresceu entre fitas de vídeo, fliperama, tazos e domingo de pagode. Cada enigma tem uma única solução, que se resolve só com raciocínio, sem chute. Todo tipo de jogo vem com uma página “Como jogar” para quem nunca fez nada parecido.</p>
+        <div class="games">
+          <div class="game"><h3>Grade de Dedução</h3><p>Descubra quem fez o quê cruzando as pistas.</p></div>
+          <div class="game"><h3>Planta do Crime</h3><p>Posicione cada suspeito na planta da casa.</p></div>
+          <div class="game"><h3>Cruzada Secreta</h3><p>Palavras cruzadas com uma resposta escondida.</p></div>
+          <div class="game"><h3>Caça-Palavras Ilustrado</h3><p>Ache os objetos da época pelos desenhos.</p></div>
+          <div class="game"><h3>Charada de Ícones</h3><p>Junte os ícones e adivinhe o nome.</p></div>
+          <div class="game"><h3>Criptograma</h3><p>Decifre os nomes escritos em código.</p></div>
+        </div>
+        <div class="row">
+          <a class="btn" href="https://www.instagram.com/epessutti/" target="_blank" rel="noopener">Siga @epessutti para saber do lançamento</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="autor">
+    <div class="wrap author">
+      <div class="avatar"><img src="img/epessutti-avatar.jpg" alt="Ilustração do autor Epessutti" width="120" height="120"></div>
+      <div>
+        <h2>Quem faz os livros</h2>
+        <p>Epessutti é apaixonado por jogos de lógica e pela nostalgia dos anos 90, e cria livros de colorir para os pequenos e enigmas para os grandes. O Pippin é só o começo: depois do Nordeste, ele ainda vai conhecer outros cantos do Brasil.</p>
+        <div class="row" style="margin-top:6px"><a class="btn ghost" href="https://www.instagram.com/epessutti/" target="_blank" rel="noopener">Instagram @epessutti</a></div>
+      </div>
+    </div>
+  </section>
+  <section class="band contato" id="contato">
+    <div class="wrap contato-grid">
+      <div>
+        <span class="tag">Contato</span>
+        <h2>Fale com o Epessutti</h2>
+        <p>Quer ser avisado quando o Enigmas dos Anos 90 sair, tem uma dúvida sobre as edições do Pippin ou uma ideia de parceria? Mande uma mensagem que eu respondo por e-mail.</p>
+      </div>
+      <form name="contato" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="form" id="form-contato">
+        <input type="hidden" name="form-name" value="contato">
+        <p class="hp"><label>Não preencha: <input name="bot-field"></label></p>
+        <label for="f-nome">Nome</label>
+        <input id="f-nome" name="nome" type="text" autocomplete="name" required>
+        <label for="f-email">E-mail</label>
+        <input id="f-email" name="email" type="email" autocomplete="email" required>
+        <label for="f-assunto">Assunto</label>
+        <select id="f-assunto" name="assunto">
+          <option>Quero ser avisado do lançamento do Enigmas</option>
+          <option>Dúvida sobre o livro do Pippin</option>
+          <option>Parceria ou divulgação</option>
+          <option>Outro assunto</option>
+        </select>
+        <label for="f-msg">Mensagem</label>
+        <textarea id="f-msg" name="mensagem" rows="4" placeholder="Opcional"></textarea>
+        <button class="btn" type="submit">Enviar mensagem</button>
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="y">2026</span> Epessutti. Pippin e Caju são personagens originais do autor.</span>
+    <span><a href="https://www.instagram.com/epessutti/" target="_blank" rel="noopener">@epessutti</a></span>
+  </div>
+</footer>
+<script>{const y=document.getElementById('y');if(y)y.textContent=new Date().getFullYear();
+const f=document.getElementById('form-contato'),st=document.getElementById('form-status');
+if(f)f.addEventListener('submit',e=>{e.preventDefault();const b=f.querySelector('button');b.disabled=true;st.textContent='Enviando...';
+fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(f)).toString()})
+.then(r=>{if(!r.ok)throw 0;f.reset();st.textContent='Mensagem enviada! Obrigado, respondo em breve.'})
+.catch(()=>{st.textContent='Não foi possível enviar agora. Tente de novo ou fale pelo Instagram @epessutti.'})
+.finally(()=>{b.disabled=false})});}</script>
+</body>
+</html>
