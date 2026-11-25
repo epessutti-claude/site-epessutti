@@ -1,0 +1,3 @@
+# Segurança extra: se algum dia esta branch for enviada à Netlify, o build é ignorado.
+[build]
+  ignore = "exit 0"
